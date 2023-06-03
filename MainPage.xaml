@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAXILauncher.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+            <Image
+                Source="taxi.jpg"
+                SemanticProperties.Description="A light box which says TAXI"
+                HeightRequest="400"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="What's your name?"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="28"
+                HorizontalOptions="Center" />
+            <Entry
+                x:Name="UserEntry"
+                Placeholder=" "
+                FontSize="28"
+                HorizontalOptions="Center"
+                MinimumWidthRequest="300"/>
+            <Label
+                Text="How many drinks have you had?"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Select a difficulty level"
+                FontSize="28"
+                HorizontalOptions="Center" />
+            <Picker 
+                x:Name="DifficultyPicker"    
+                HorizontalOptions="Center"
+                TextColor="{StaticResource Gray300}"
+                FontSize="28"
+                SelectedItem="0"
+                MinimumWidthRequest="300">
+                <Picker.Items>
+                <x:String>"I don't touch the stuff, mate (easy)"</x:String>
+                <x:String>"Only a shandy"</x:String>
+                <x:String>"I might have had a couple (normal)"</x:String>
+                <x:String>"Who's counting?"</x:String>
+                <x:String>"I don't feel so good (hard)"</x:String>
+                </Picker.Items>
+                </Picker>
+
+
+
+
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Get in"
+                SemanticProperties.Hint="Launches the game"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+            
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
